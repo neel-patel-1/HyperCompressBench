@@ -7,13 +7,13 @@ cd source_data
 	git config core.sparseCheckout true && \
 	echo "testdata/ >> .git/info/sparse-checkout" &&
 	git pull origin main && mkdir -p ../Snappy && \
-	cp -r testdata/* ../Snappy/
+	cp -r testdata/* ../Snappy/ && cd ..
 
 [ ! -d "Calgary" ] && \
 	wget http://corpus.canterbury.ac.nz/resources/calgary.tar.gz && \
 	mkdir -p Calgary && tar -xzf calgary.tar.gz -C Calgary
 
-[ ! -d "Canterbury"] && \
+[ ! -d "Canterbury" ] && \
 	wget http://corpus.canterbury.ac.nz/resources/cantrbry.tar.gz && \
 	mkdir -p Canterbury && tar -xzf cantrbry.tar.gz -C Canterbury
 
